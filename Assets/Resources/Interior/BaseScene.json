@@ -1,0 +1,966 @@
+{
+  "version": "v2",
+  "title": null,
+  "floorMapFile": "Base",
+  "floors": [
+    {
+      "floorUniqueId": "83c8d718-9e54-48e1-940f-ed1d224dd39b",
+      "sceneObjects": [
+        {
+          "prefabName": "Floor_Base_001",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -1.98792493,
+            "y": 0.15000014,
+            "z": -1.99289346
+          },
+          "rotation": {
+            "x": -4.00046429E-06,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "Partition_Wall_001",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -1.49513686,
+            "y": 0.30898723,
+            "z": -0.49143815
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "Floor_Base_001",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 2.012075,
+            "y": 0.15000014,
+            "z": -1.99289346
+          },
+          "rotation": {
+            "x": -4.00046429E-06,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "Floor_Base_001",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 1.96818972,
+            "y": 0.150000483,
+            "z": 1.98638093
+          },
+          "rotation": {
+            "x": -1.35665923E-05,
+            "y": 270.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "sofa_029",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -2.08254266,
+            "y": 0.0,
+            "z": 0.9331963
+          },
+          "rotation": {
+            "x": -4.00046429E-06,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "Floor_Base_002",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -0.180143833,
+            "y": 0.0117,
+            "z": 2.0150578
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "tv_wall_005",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -1.9774121,
+            "y": 0.0017,
+            "z": 3.7255578
+          },
+          "rotation": {
+            "x": 4.05528954E-05,
+            "y": 180.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "floor_014",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "position": {
+            "x": -2.01049,
+            "y": 0.0,
+            "z": 1.99014068
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "floor_015",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 1.97588134,
+            "y": 0.2989875,
+            "z": 1.96839607
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 270.000031,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "floor_015",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 1.98475266,
+            "y": 0.29898712,
+            "z": -2.01293278
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 90.00001,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "floor_015",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -2.01314735,
+            "y": 0.29898712,
+            "z": -1.97899175
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 270.000031,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "flowerpot_017",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 0.428498626,
+            "y": 0.298987865,
+            "z": 0.403725624
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "lamp_floor_003",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 3.26949358,
+            "y": 0.2989872,
+            "z": 0.247749329
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 315.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "tv_wall_002",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 3.60664654,
+            "y": 0.29898715,
+            "z": -1.59810793
+          },
+          "rotation": {
+            "x": -4.000469E-06,
+            "y": 270.0,
+            "z": 4.0711095E-13
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "office_table_030",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 3.57676315,
+            "y": 0.29898712,
+            "z": 2.03254414
+          },
+          "rotation": {
+            "x": -1.35665759E-05,
+            "y": 270.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "shelf_061",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 3.689008,
+            "y": 0.2989871,
+            "z": 3.69615674
+          },
+          "rotation": {
+            "x": -1.35665941E-05,
+            "y": 270.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "prop_023",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 3.72808051,
+            "y": 1.19231546,
+            "z": 1.40453589
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "prop_027",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 3.52373242,
+            "y": 0.824555039,
+            "z": -2.482397
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 315.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "office_chair_024",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 3.14559078,
+            "y": 0.2989872,
+            "z": 1.98723185
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 45.0000038,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "lamp_table_007",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 3.60640931,
+            "y": 1.19231546,
+            "z": 2.703621
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 180.000015,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "flowerpot_013",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 3.65358853,
+            "y": 2.53347468,
+            "z": 3.67436743
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "electronics_011",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 3.57653332,
+            "y": 1.19231546,
+            "z": 2.063806
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 270.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "closet_038",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -3.04235983,
+            "y": 0.298987,
+            "z": -3.63479042
+          },
+          "rotation": {
+            "x": -4.00046429E-06,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "bed_024",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 1.79571223,
+            "y": 0.298987031,
+            "z": -3.46891546
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": -1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "coffee_table_016",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -2.1857748,
+            "y": 0.0021,
+            "z": 2.10725927
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "bed_024",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -1.18131566,
+            "y": 0.298987031,
+            "z": -3.503028
+          },
+          "rotation": {
+            "x": -4.00046429E-06,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "prop_047",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -1.90966082,
+            "y": 0.386300027,
+            "z": 1.94041908
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "prop_086",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -2.36900663,
+            "y": 0.386300027,
+            "z": 1.89560044
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 179.999985,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "prop_086",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -2.645681,
+            "y": 0.386300027,
+            "z": 2.08299065
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 315.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "picture_011",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 3.96618962,
+            "y": 1.39642575E-10,
+            "z": -1.35676193
+          },
+          "rotation": {
+            "x": -4.000468E-06,
+            "y": 270.0,
+            "z": 4.0711095E-13
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "flowerpot_002",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -2.81286621,
+            "y": 2.51510429,
+            "z": -3.69475341
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "bed_024",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -3.07344341,
+            "y": 0.29898718,
+            "z": -1.08071184
+          },
+          "rotation": {
+            "x": 4.05528954E-05,
+            "y": 180.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": -1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "bed_024",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -0.4948262,
+            "y": 0.29898718,
+            "z": -1.09680176
+          },
+          "rotation": {
+            "x": 4.05528954E-05,
+            "y": 180.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "picture_041",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": 0.3062296,
+            "y": 0.298986971,
+            "z": -3.97117758
+          },
+          "rotation": {
+            "x": -4.00046429E-06,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "picture_048",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -1.54488361,
+            "y": 0.29898724,
+            "z": -0.3764243
+          },
+          "rotation": {
+            "x": -4.05529E-05,
+            "y": 1.83894826E-05,
+            "z": -9.869898E-12
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "picture_048",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -3.051364,
+            "y": 0.29898724,
+            "z": -0.366849422
+          },
+          "rotation": {
+            "x": -4.05528954E-05,
+            "y": -1.20792083E-05,
+            "z": 1.33965651E-11
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        },
+        {
+          "prefabName": "Floor_Base_003",
+          "materialVariantName": null,
+          "colorVariant": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "position": {
+            "x": -2.180955,
+            "y": 0.0021,
+            "z": 0.1605599
+          },
+          "rotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        }
+      ],
+      "roomSettings": [
+        {
+          "floorMapItemId": 0,
+          "wall": null,
+          "floor": null,
+          "ceiling": null,
+          "separateWallTextureSettings": null,
+          "floorTextureSetting": {
+            "materialName": null,
+            "tiling": 0.0
+          },
+          "ceilingTextureSetting": {
+            "materialName": null,
+            "tiling": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "exteriorWallMat": null,
+    "roofMat": null,
+    "roofTextureSetting": {
+      "materialName": null,
+      "tiling": 1.0
+    },
+    "exteriorWallTextureSetting": {
+      "materialName": null,
+      "tiling": 1.0
+    }
+  }
+}
