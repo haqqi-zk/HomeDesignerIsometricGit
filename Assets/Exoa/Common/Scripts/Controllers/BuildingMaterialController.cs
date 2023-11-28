@@ -110,6 +110,7 @@ namespace Exoa.Designer
 
         void Update()
         {
+            /*
             if (HDInputs.ToggleExteriorWalls())
             {
                 ToggleExteriorWalls();
@@ -117,7 +118,7 @@ namespace Exoa.Designer
             if (HDInputs.ToggleRoof())
             {
                 ToggleRoof();
-            }
+            }*/
         }
 
         private void ToggleExteriorWalls()

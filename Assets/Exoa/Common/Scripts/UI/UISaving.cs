@@ -70,7 +70,7 @@ namespace Exoa.Designer
             GameEditorEvents.OnFileChanged += GetFileList;
             GameEditorEvents.OnScreenShotSaved += OnScreenShotSavedHandler;
             GameEditorEvents.OnRequestButtonAction += OnRequestAction;
-            GetFileList();
+            //GetFileList();
 
             if (startAction == StartAction.CreateNew)
             {
@@ -340,6 +340,7 @@ namespace Exoa.Designer
             {
                 CreateNewScene();
                 PopupColor.Instance.SetWallFloorDefaultColor();
+                _BackgroundColorController.Instance.SetBackgroundColorToDefault();
                 return;
             }
             AlertPopup popup = AlertPopup.ShowAlert("save", "Save " + saveNameInputField.text + "?", "Do you want to save the current configuration?", true, "No thanks!");
@@ -348,6 +349,7 @@ namespace Exoa.Designer
             {
                 CreateNewScene();
                 PopupColor.Instance.SetWallFloorDefaultColor();
+                _BackgroundColorController.Instance.SetBackgroundColorToDefault();
             });
             popup.OnClickOKEvent.AddListener(() =>
             {
@@ -355,6 +357,7 @@ namespace Exoa.Designer
                 {
                     CreateNewScene();
                     PopupColor.Instance.SetWallFloorDefaultColor();
+                    _BackgroundColorController.Instance.SetBackgroundColorToDefault();
                 }
             });
 

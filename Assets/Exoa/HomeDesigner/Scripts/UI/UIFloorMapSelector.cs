@@ -55,6 +55,7 @@ namespace Exoa.Designer
         private void OnClickLoadDefaultMap()
         {
             UISaving.instance.LoadInternal("BaseScene", false, true);
+            UISaving.instance.saveNameInputField.text = string.Empty;
             UISaving.instance.GetFileList();
         }
 

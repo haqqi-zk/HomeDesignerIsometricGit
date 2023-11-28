@@ -8,6 +8,8 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using Proyecto26;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
+using Unity.VisualScripting;
+using Newtonsoft.Json;
 
 [Serializable, ExecuteInEditMode]
 public class _ScreenShotHandler : CaptureBase
@@ -29,9 +31,13 @@ public class _ScreenShotHandler : CaptureBase
     public string imageSavePath { get; protected set; }
 
     private byte[] imageData;
+    private ImageScreenshotData screenshotData;
     public bool isSaved = false;
     public bool uploaded = false;
     public string uploadedName;
+    public string imageLink;
+
+    public string testString;
     private void Start()
     {
         ssButton.onClick.AddListener(StartCaptureImage);
@@ -57,7 +63,14 @@ public class _ScreenShotHandler : CaptureBase
         // Read screen contents into the texture
         txt.ReadPixels(new Rect(0, 0, screenWidth, screenHeight), 0, 0);
         txt.Apply();
-        imageData = txt.EncodeToPNG();
+        if(imageFormat == ImageFormat.PNG)
+        {
+            imageData = txt.EncodeToPNG();
+        }
+        else if(imageFormat == ImageFormat.JPEG)
+        {
+            imageData = txt.EncodeToJPG();
+        }
 
         RenderTexture.active = prevTexture;
 
@@ -144,19 +157,20 @@ public class _ScreenShotHandler : CaptureBase
         string fullName = null;
         if(uploadedName == null || uploadedName == string.Empty)
         {
-            string ext = imageFormat == ImageFormat.PNG ? "png" : "jpg";
-            fullName = string.Format("image_{0}.{1}",
-              Utils.GetTimeString(),
-              ext);
+            
+            fullName = string.Format("image_{0}",
+              Utils.GetTimeString());
             uploadedName = fullName;
         }
         else
         {
             fullName = uploadedName;
         }
-        
 
-        var url = _DatabaseController.Instance.StorageUrl + fullName;
+
+        //var url = _DatabaseController.Instance.imageScreenshotDatabase + fullName;
+
+        /*
         if (!uploaded)
         {
             if (imageData != null)
@@ -182,7 +196,26 @@ public class _ScreenShotHandler : CaptureBase
         else
         {
             Application.OpenURL(mediaLink + url + "?alt=media");
+        }*/
+        string ext = imageFormat == ImageFormat.PNG ? "png" : "jpg";
+        imageLink = _DatabaseController.Instance.imageScreenshotDatabase + "upload/image/" + fullName + "." + ext;
+        if (!uploaded)
+        {
+            ImageScreenshotData imageScreenshotData = new ImageScreenshotData();
+            imageScreenshotData.title = fullName;
+            imageScreenshotData.upload_image = Convert.ToBase64String(imageData);
+            
+            imageScreenshotData.upload_image_extension = ext;
+            RestClient.Put(_DatabaseController.Instance.imageScreenshotDatabase + "index.php", JsonConvert.SerializeObject(imageScreenshotData));
+
+            testString = imageScreenshotData.upload_image;
+            uploaded = true;
+            Application.OpenURL(mediaLink + imageLink);
+
         }
-        
+        else
+        {
+            Application.OpenURL(mediaLink + imageLink);
+        }
     }
 }

@@ -165,7 +165,7 @@ public static class RuntimePreviewGenerator
     static RuntimePreviewGenerator()
     {
         PreviewRenderCamera = null;
-        PreviewDirection = new Vector3(-1f, -1f, -1f);
+        PreviewDirection = new Vector3(-1f, -1f, 1f);
         Padding = 0f;
         BackgroundColor = new Color(0.3f, 0.3f, 0.3f, 1f);
         OrthographicMode = false;
@@ -212,7 +212,7 @@ public static class RuntimePreviewGenerator
             return null;
 
         Texture2D result = null;
-
+        Debug.Log(model.gameObject.name);
         if (!model.gameObject.scene.IsValid() || !model.gameObject.scene.isLoaded)
             shouldCloneModel = true;
 
@@ -358,7 +358,7 @@ public static class RuntimePreviewGenerator
             result = new Texture2D(width, height, m_backgroundColor.a < 1f ? TextureFormat.RGBA32 : TextureFormat.RGB24, false);
             result.ReadPixels(new Rect(0, 0, width, height), 0, 0, false);
             result.Apply(false, m_markTextureNonReadable);
-
+            
             RenderTexture.active = temp;
             RenderTexture.ReleaseTemporary(renderTex);
         }

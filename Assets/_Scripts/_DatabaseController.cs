@@ -20,12 +20,14 @@ public class _DatabaseController : MonoBehaviour
 {
     public static _DatabaseController Instance;
     private const string PROJECT_NAME = "HomeDesigner";
+    private const string NO_LOGIN_PROJECT_NAME = "NoLoginHomeDesigner";
     private const string FIREBASE_AUTH_KEY = "AIzaSyAt13J8WMnrYYDO3Rp5RPPtS16N47b6dGs";
 
     //AIzaSyAPtHvJVHrYauHWdT9JqeUIETpGT3OjvLY
     [SerializeField] string _databaseUrl;
     [SerializeField] string _storageUrl;
     public string StorageUrl;
+    public string imageScreenshotDatabase;
     public static string DatabaseUrl;
     public static string PlayerNameDatabase;
 
@@ -38,9 +40,10 @@ public class _DatabaseController : MonoBehaviour
 
     public static bool connectionState;
     public bool isOnline;
-
-    [HideInInspector] public List<DatabaseFile> interiorList = new List<DatabaseFile>();
-    [HideInInspector] public List<DatabaseFile> floorMapsList = new List<DatabaseFile>();
+    //[HideInInspector]
+    public List<DatabaseFile> interiorList = new List<DatabaseFile>();
+    //[HideInInspector]
+    public List<DatabaseFile> floorMapsList = new List<DatabaseFile>();
     public string PlayerName { get { return PlayerNameDatabase; } }
 
     public static fsSerializer serializer = new fsSerializer();
@@ -50,6 +53,9 @@ public class _DatabaseController : MonoBehaviour
 
     public GameObject sampleScenePrefab;
     public bool useSampleScene = true;
+
+    public static bool IsLogin;
+    public bool isLogin = true;
 
     public string playerEmailBackup;
     public string playerPasswordBackup;
@@ -85,6 +91,8 @@ public class _DatabaseController : MonoBehaviour
 
         UseSampleScene = useSampleScene;
         SampleScenePrefab = sampleScenePrefab;
+
+        IsLogin = isLogin;
     }
     public static void DebugError(string msg)
     {
@@ -113,8 +121,15 @@ public class _DatabaseController : MonoBehaviour
         return fileList;
     }
     public string GetDatabaseUrl(string subFolderName)
-    {
-        return $"{_databaseUrl}{PROJECT_NAME}/{PlayerNameDatabase}/{subFolderName}";
+    {        
+        if (IsLogin)
+        {
+            return $"{_databaseUrl}{PROJECT_NAME}/{PlayerNameDatabase}/{subFolderName}";
+        }
+        else
+        {
+            return $"{_databaseUrl}{NO_LOGIN_PROJECT_NAME}/{subFolderName}";
+        }
     }
     public string GetStorageUrl()
     {
@@ -135,7 +150,14 @@ public class _DatabaseController : MonoBehaviour
         string fullName = null;
         if (thumbnailName.Contains("_persp.png"))
         {
-            fullName = $"{PlayerNameDatabase}_{thumbnailName}";
+            if (IsLogin)
+            {
+                fullName = $"{PlayerNameDatabase}_{thumbnailName}";
+            }
+            else
+            {
+                fullName = $"{thumbnailName}";
+            }
             if (subFolderName != null)
             {
                 fullName = $"{subFolderName}_{thumbnailName}";
@@ -143,7 +165,14 @@ public class _DatabaseController : MonoBehaviour
         }
         else
         {
-            fullName = $"{PlayerNameDatabase}_{thumbnailName}_persp.png";
+            if (IsLogin)
+            {
+                fullName = $"{PlayerNameDatabase}_{thumbnailName}_persp.png";
+            }
+            else
+            {
+                fullName = $"{thumbnailName}_persp.png";
+            }
             if (subFolderName != null)
             {
                 fullName = $"{subFolderName}_{thumbnailName}_persp.png";
@@ -180,11 +209,25 @@ public class _DatabaseController : MonoBehaviour
         string url = null;
         if (fileName.Contains(".png"))
         {
-            url = $"{_storageUrl}{PlayerNameDatabase}_{subFolderName}_{fileName}?alt=media";
+            if (IsLogin)
+            {
+                url = $"{_storageUrl}{PlayerNameDatabase}_{subFolderName}_{fileName}?alt=media";
+            }
+            else
+            {
+                url = $"{_storageUrl}{subFolderName}_{fileName}?alt=media";
+            }
         }
         else
         {
-            url = $"{_storageUrl}{PlayerNameDatabase}_{subFolderName}_{fileName}{ext}?alt=media";
+            if (IsLogin)
+            {
+                url = $"{_storageUrl}{PlayerNameDatabase}_{subFolderName}_{fileName}{ext}?alt=media";
+            }
+            else
+            {
+                url = $"{_storageUrl}{subFolderName}_{fileName}{ext}?alt=media";
+            }
         }
 
         WebRequest webRequest = WebRequest.Create(url);
@@ -208,11 +251,25 @@ public class _DatabaseController : MonoBehaviour
         string url = null;
         if (fileName.Contains(".png"))
         {
-            url = GetStorageUrl() + $"{PlayerNameDatabase}_{fileName}?alt=media";
+            if (IsLogin)
+            {
+                url = GetStorageUrl() + $"{PlayerNameDatabase}_{fileName}?alt=media";
+            }
+            else
+            {
+                url = GetStorageUrl() + $"{fileName}?alt=media";
+            }
         }
         else
         {
-            url = GetStorageUrl() + $"{PlayerNameDatabase}_{fileName}.png?alt=media";
+            if (IsLogin)
+            {
+                url = GetStorageUrl() + $"{PlayerNameDatabase}_{fileName}.png?alt=media";
+            }
+            else
+            {
+                url = GetStorageUrl() + $"{fileName}.png?alt=media";
+            }
         }
         var request = UnityWebRequestTexture.GetTexture(url);
         try
@@ -239,11 +296,25 @@ public class _DatabaseController : MonoBehaviour
         string url = null;
         if (fileName.Contains("_persp.png"))
         {
-            url = GetStorageUrl() + $"{PlayerNameDatabase}_{fileName}?alt=media";
+            if (IsLogin)
+            {
+                url = GetStorageUrl() + $"{PlayerNameDatabase}_{fileName}?alt=media";
+            }
+            else
+            {
+                url = GetStorageUrl() + $"{fileName}?alt=media";
+            }
         }
         else
         {
-            url = GetStorageUrl() + $"{PlayerNameDatabase}_{fileName}_persp.png?alt=media";
+            if (IsLogin)
+            {
+                url = GetStorageUrl() + $"{PlayerNameDatabase}_{fileName}_persp.png?alt=media";
+            }
+            else
+            {
+                url = GetStorageUrl() + $"{fileName}_persp.png?alt=media";
+            }
         }
         var request = UnityWebRequestTexture.GetTexture(url);
         try
@@ -262,18 +333,31 @@ public class _DatabaseController : MonoBehaviour
         }
         finalTexture = DownloadHandlerTexture.GetContent(request);
         return finalTexture;
-
     }
     public void DeleteFromFirebaseStorage(string fileName, string subFolderName)
     {
         string url = null;
         if (fileName.Contains("_persp.png"))
         {
-            url = $"{_storageUrl}{PlayerNameDatabase}_{subFolderName}_{fileName}";
+            if (IsLogin)
+            {
+                url = $"{_storageUrl}{PlayerNameDatabase}_{subFolderName}_{fileName}";
+            }
+            else
+            {
+                url = $"{_storageUrl}{subFolderName}_{fileName}";
+            }
         }
         else
         {
-            url = $"{_storageUrl}{PlayerNameDatabase}_{subFolderName}_{fileName}_persp.png";
+            if (IsLogin)
+            {
+                url = $"{_storageUrl}{PlayerNameDatabase}_{subFolderName}_{fileName}_persp.png";
+            }
+            else
+            {
+                url = $"{_storageUrl}{subFolderName}_{fileName}_persp.png";
+            }
         }
         RestClient.Delete(url).Then(response =>
         {
@@ -302,29 +386,61 @@ public class _DatabaseController : MonoBehaviour
     public void SaveDataArray<T>(string key, List<T> data)
     {
         if (!_isShouldRunning) return;
-        RestClient.Put<T>($"{_databaseUrl}{PROJECT_NAME}/{PlayerNameDatabase}/{key}.json?auth={_idToken}",
-            JsonConvert.SerializeObject(data)).Then(res =>
-            {
 
-            }).Catch(err =>
-            {
-                var error = err as RequestException;
-                if (error.Response.Contains("TOKEN_EXPIRED"))
+        if (IsLogin)
+        {
+            RestClient.Put<T>($"{_databaseUrl}{PROJECT_NAME}/{PlayerNameDatabase}/{key}.json?auth={_idToken}",
+                JsonConvert.SerializeObject(data)).Then(res =>
                 {
-                    RefreshTokenId();
-                    SaveDataArray(key, data);
-                }
-            });
+
+                }).Catch(err =>
+                {
+                    var error = err as RequestException;
+                    if (error.Response.Contains("TOKEN_EXPIRED"))
+                    {
+                        RefreshTokenId();
+                        SaveDataArray(key, data);
+                    }
+                });
+        }
+        else
+        {
+            RestClient.Put<T>($"{_databaseUrl}{NO_LOGIN_PROJECT_NAME}/{key}.json?auth={_idToken}",
+                JsonConvert.SerializeObject(data)).Then(res =>
+                {
+
+                }).Catch(err =>
+                {
+                    var error = err as RequestException;
+                    if (error.Response.Contains("TOKEN_EXPIRED"))
+                    {
+                        RefreshTokenId();
+                        SaveDataArray(key, data);
+                    }
+                });
+        }
+        
     }
 
     public static void SaveData<T, TT>(Dictionary<T, TT> data)
     {
         if (!_isShouldRunning) return;
 
-        foreach (var key in data.Keys)
+        if (IsLogin)
         {
-            RestClient.Put<T>($"{DatabaseUrl}{PROJECT_NAME}/{PlayerNameDatabase}/{key}.json?auth={_idToken}",
-                JsonConvert.SerializeObject(data[key].ToString()));
+            foreach (var key in data.Keys)
+            {
+                RestClient.Put<T>($"{DatabaseUrl}{PROJECT_NAME}/{PlayerNameDatabase}/{key}.json?auth={_idToken}",
+                    JsonConvert.SerializeObject(data[key].ToString()));
+            }
+        }
+        else
+        {
+            foreach (var key in data.Keys)
+            {
+                RestClient.Put<T>($"{DatabaseUrl}{NO_LOGIN_PROJECT_NAME}/{key}.json?auth={_idToken}",
+                    JsonConvert.SerializeObject(data[key].ToString()));
+            }
         }
     }
 
@@ -332,21 +448,42 @@ public class _DatabaseController : MonoBehaviour
     {
         if (!_isShouldRunning) return UniTask.FromResult(string.Empty);
 
-        var taskCompletionSource = new TaskCompletionSource<string>();
-
-        var requestHelper = new RequestHelper()
+        if (IsLogin)
         {
-            Uri = $"{_databaseUrl}{PROJECT_NAME}/{PlayerNameDatabase}/{key}.json?auth={_idToken}",
-        };
+            var taskCompletionSource = new TaskCompletionSource<string>();
 
-        RestClient.Get(requestHelper).Then(res =>
+            var requestHelper = new RequestHelper()
+            {
+                Uri = $"{_databaseUrl}{PROJECT_NAME}/{PlayerNameDatabase}/{key}.json?auth={_idToken}",
+            };
+
+            RestClient.Get(requestHelper).Then(res =>
+            {
+                taskCompletionSource.SetResult(res.Text);
+            }).Catch(err => {
+                taskCompletionSource.SetResult(string.Empty);
+            });
+
+            return taskCompletionSource.Task.AsUniTask();
+        }
+        else
         {
-            taskCompletionSource.SetResult(res.Text);
-        }).Catch(err => {
-            taskCompletionSource.SetResult(string.Empty);
-        });
+            var taskCompletionSource = new TaskCompletionSource<string>();
 
-        return taskCompletionSource.Task.AsUniTask();
+            var requestHelper = new RequestHelper()
+            {
+                Uri = $"{_databaseUrl}{NO_LOGIN_PROJECT_NAME}/{key}.json?auth={_idToken}",
+            };
+
+            RestClient.Get(requestHelper).Then(res =>
+            {
+                taskCompletionSource.SetResult(res.Text);
+            }).Catch(err => {
+                taskCompletionSource.SetResult(string.Empty);
+            });
+
+            return taskCompletionSource.Task.AsUniTask();
+        }
     }
     public static UniTask<string> LoadPlayerName()
     {
@@ -403,25 +540,52 @@ public class _DatabaseController : MonoBehaviour
     {
         if (!_isShouldRunning) return;
 
-        RestClient.Delete($"{_databaseUrl}{PROJECT_NAME}/{PlayerNameDatabase}/{key}.json?auth={_idToken}");
+        if (IsLogin)
+        {
+            RestClient.Delete($"{_databaseUrl}{PROJECT_NAME}/{PlayerNameDatabase}/{key}.json?auth={_idToken}");
+        }
+        else
+        {
+            RestClient.Delete($"{_databaseUrl}{NO_LOGIN_PROJECT_NAME}/{key}.json?auth={_idToken}");
+        }
+        
     }
 
     public void SaveDataArrayGlobal<T>(string key, List<T> data)
     {
         if (!_isShouldRunning) return;
 
-        RestClient.Put<T>($"{_databaseUrl}{PROJECT_NAME}{key}.json?auth={_idToken}",
-            JsonConvert.SerializeObject(data));
+        if (IsLogin)
+        {
+            RestClient.Put<T>($"{_databaseUrl}{PROJECT_NAME}{key}.json?auth={_idToken}",
+                JsonConvert.SerializeObject(data));
+        }
+        else
+        {
+            RestClient.Put<T>($"{_databaseUrl}{NO_LOGIN_PROJECT_NAME}{key}.json?auth={_idToken}",
+                JsonConvert.SerializeObject(data));
+        }
     }
 
     public void SaveDataGlobal<T, TT>(Dictionary<T, TT> data)
     {
         if (!_isShouldRunning) return;
 
-        foreach (var key in data.Keys)
+        if (IsLogin)
         {
-            RestClient.Put<T>($"{_databaseUrl}{PROJECT_NAME}{key}.json?auth={_idToken}",
-                JsonConvert.SerializeObject(data));
+            foreach (var key in data.Keys)
+            {
+                RestClient.Put<T>($"{_databaseUrl}{PROJECT_NAME}{key}.json?auth={_idToken}",
+                    JsonConvert.SerializeObject(data));
+            }
+        }
+        else
+        {
+            foreach (var key in data.Keys)
+            {
+                RestClient.Put<T>($"{_databaseUrl}{NO_LOGIN_PROJECT_NAME}{key}.json?auth={_idToken}",
+                    JsonConvert.SerializeObject(data));
+            }
         }
     }
 
@@ -429,21 +593,42 @@ public class _DatabaseController : MonoBehaviour
     {
         if (!_isShouldRunning) return UniTask.FromResult(string.Empty);
 
-        var taskCompletionSource = new TaskCompletionSource<string>();
-
-        var requestHelper = new RequestHelper()
+        if (IsLogin)
         {
-            Uri = $"{_databaseUrl}{PROJECT_NAME}{key}.json?auth={_idToken}",
-        };
+            var taskCompletionSource = new TaskCompletionSource<string>();
 
-        RestClient.Get(requestHelper).Then(res =>
+            var requestHelper = new RequestHelper()
+            {
+                Uri = $"{_databaseUrl}{PROJECT_NAME}{key}.json?auth={_idToken}",
+            };
+
+            RestClient.Get(requestHelper).Then(res =>
+            {
+                taskCompletionSource.SetResult(res.Text);
+            }).Catch(err => {
+                taskCompletionSource.SetResult(string.Empty);
+            });
+
+            return taskCompletionSource.Task.AsUniTask();
+        }
+        else
         {
-            taskCompletionSource.SetResult(res.Text);
-        }).Catch(err => {
-            taskCompletionSource.SetResult(string.Empty);
-        });
+            var taskCompletionSource = new TaskCompletionSource<string>();
 
-        return taskCompletionSource.Task.AsUniTask();
+            var requestHelper = new RequestHelper()
+            {
+                Uri = $"{_databaseUrl}{NO_LOGIN_PROJECT_NAME}{key}.json?auth={_idToken}",
+            };
+
+            RestClient.Get(requestHelper).Then(res =>
+            {
+                taskCompletionSource.SetResult(res.Text);
+            }).Catch(err => {
+                taskCompletionSource.SetResult(string.Empty);
+            });
+
+            return taskCompletionSource.Task.AsUniTask();
+        }
     }
     public static UniTask<SignResponse> SignUpUser(string username, string email, string password)
     {
@@ -685,4 +870,11 @@ public class UserData
     public string LocalId;
     public string Username;
 }
-
+[Serializable]
+public class ImageScreenshotData
+{
+    public string title;
+    public string upload_json;
+    public string upload_image;
+    public string upload_image_extension;
+}

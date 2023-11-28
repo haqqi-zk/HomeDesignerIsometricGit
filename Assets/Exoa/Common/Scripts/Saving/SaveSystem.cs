@@ -131,6 +131,7 @@ namespace Exoa.Designer
                             if(file.WallColors != null || file.FloorColors != null)
                             {
                                 PopupColor.Instance.SetBaseSceneColor(file.WallColors, file.FloorColors);
+                                Debug.Log(file.WallColors[0]);
                             }
                             if(file.backgroundColor != null)
                             {
@@ -266,6 +267,12 @@ namespace Exoa.Designer
                     {
                         if (fileList[i].fileName == fileName)
                         {
+                            if (_DatabaseController.UseSampleScene)
+                            {
+                                fileList[i].WallColors = PopupColor.Instance.GetStringData("Wall");
+                                fileList[i].FloorColors = PopupColor.Instance.GetStringData("Floor");
+                                fileList[i].backgroundColor = _BackgroundColorController.Instance.GetBackgroundColorData();
+                            }
                             fileList[i].jsonStr = json;
                             break;
                         }

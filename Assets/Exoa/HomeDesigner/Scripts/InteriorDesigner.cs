@@ -132,8 +132,11 @@ namespace Exoa.Designer
             LoadPrefabs();
 
             AppController.OnAppStateChange += OnAppStateChange;
-
-            await _DatabaseController.SignInUser(_DatabaseController.Instance.playerEmailBackup, _DatabaseController.Instance.playerPasswordBackup);
+            if (_DatabaseController.IsLogin)
+            {
+                await _DatabaseController.SignInUser(_DatabaseController.Instance.playerEmailBackup, _DatabaseController.Instance.playerPasswordBackup);
+            }
+            
             UISaving.instance.GetFileList();
         }
 

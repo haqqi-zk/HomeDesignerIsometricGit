@@ -19,5 +19,10 @@ namespace Exoa.Designer
             handled = false;
             Tooltip.Hide();
         }
+        public void HideThis()
+        {
+            handled = false;
+            Tooltip.Hide();
+        }
     }
 }

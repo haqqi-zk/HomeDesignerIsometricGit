@@ -91,7 +91,7 @@ namespace Exoa.Designer
 
 
             string perspViewName = fileName.Replace(".json", "_persp.png");
-            ThumbnailGeneratorUtils.TakeAndSaveScreenshot(globalContainer, "Interior_" + perspViewName, false, new Vector3(1, -1, 1));
+            ThumbnailGeneratorUtils.TakeAndSaveScreenshot(globalContainer, "Interior_" + perspViewName, false, new Vector3(1, -1, -1));
             GameEditorEvents.OnScreenShotSaved?.Invoke(perspViewName, MenuType.InteriorMenu);
         }
 
